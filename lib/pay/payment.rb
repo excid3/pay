@@ -41,6 +41,10 @@ module Pay
       intent.is_a?(::Stripe::SetupIntent)
     end
 
+    def capture
+      intent.capture
+    end
+
     def validate
       if requires_payment_method?
         raise Pay::InvalidPaymentMethod.new(self)

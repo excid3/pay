@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_16_015720) do
+ActiveRecord::Schema.define(version: 2019_12_06_144712) do
 
   create_table "pay_charges", force: :cascade do |t|
     t.integer "owner_id"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_08_16_015720) do
     t.string "card_exp_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "payment_intent"
+    t.boolean "captured"
     t.index ["owner_id"], name: "index_pay_charges_on_owner_id"
   end
 
